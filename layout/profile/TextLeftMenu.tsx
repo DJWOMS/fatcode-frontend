@@ -14,12 +14,16 @@ type List = {
 
 //Навесить линки на переходы по страницам
 const TextLeftMenu: React.FC<LeftMenu> = ({ list }) => {
+
     return (
         <>
             {
                 list.map(item => (
                     <Grid>
                         <Typography key={item.key} sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            columnGap: 2,
                             color: "white",
                             fontSize: 25,
                             fontWeight: "bold",
@@ -30,6 +34,7 @@ const TextLeftMenu: React.FC<LeftMenu> = ({ list }) => {
                                 color: "#69CB2D",
                             }
                         }}>
+                            {item.icon}
                             <Link href={item.href}>{item.text}</Link>
                         </Typography>
                     </Grid>
