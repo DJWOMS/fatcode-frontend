@@ -25,3 +25,9 @@ a {
     background: #F3F3F3;
   }
 }
+
+/* для иконок ховер */
+.icon > path:hover {
+    fill: #69CB2D;
+    transition: .5s;
+}
