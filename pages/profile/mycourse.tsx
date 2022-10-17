@@ -10,7 +10,7 @@ const MyCourses = () => {
         <ProfileTitle text={"Мои курсы"}/>
           <Grid container>
             <Container>
-              <Grid xs={12}>
+              <Grid xs>
                 <StartCourses />
               </Grid>
             </Container>
