@@ -1,15 +1,13 @@
-import Grid from "@mui/material/Grid";
-import Image from "next/image";
-import React, { useState } from "react";
-import { Avatar, ImageList, ImageListItem, Typography } from "@mui/material";
+import React, {useState} from "react";
+import {Avatar, ImageList, ImageListItem, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import { PropsChildren } from "../../type/PropsChildren";
-import ClickAwayListener from '@mui/material/ClickAwayListener';
 
-const PetsDonats: React.FC<PropsChildren> = ({ petsList }) => {  
-  // обнулим для сброса    
+
+const PetsDonats: React.FC<PropsChildren> = ({ petsList }) => {
+  // обнулим для сброса
   const [key, setKey] = useState(null);
-  
+
   return (
       <ImageList>
         {petsList.map(item => (
@@ -23,7 +21,7 @@ const PetsDonats: React.FC<PropsChildren> = ({ petsList }) => {
             }}/>
 
             {/* вывод текста, проверка ключа, чтобы совпадал с выбранным*/}
-            {item.key === key && <Box 
+            {item.key === key && <Box
             sx={{
                 position: 'absolute',
                 bottom: 0,
@@ -41,37 +39,4 @@ const PetsDonats: React.FC<PropsChildren> = ({ petsList }) => {
     );
   }
 
-export default PetsDonats;  
-
-
-{/* <ImageList>
-          {
-              petsList.map((item)=>(
-                  <ImageListItem
-                      key={item.key}
-                      onClick={handleMouseOver}
-                      onMouseOut={handleMouseOut}
-                      sx={{
-                          marginTop: 2,
-                          marginBottom: 2
-                      }}>
-                      { isHover ? (<>
-                          <Avatar
-                              src={item.img}
-                              sx={{
-                                  width: 250,
-                                  height: 250
-                              }}/>
-                          <Typography>fsdsd</Typography>
-                      </>) : (<>
-                          <Avatar
-                              src={item.img}
-                              sx={{
-                                  width: 250,
-                                  height: 250
-                              }}/>
-                      </> ) }
-                  </ImageListItem>
-              ))
-          }
-          </ImageList> */}
+export default PetsDonats;
