@@ -1,6 +1,19 @@
 import {Button, Grid, Input, Typography} from "@mui/material";
 import {useState} from "react";
 
+const style = {
+    input: {
+        width: 350,
+        border: "2px solid #E5E5E5",
+        borderRadius: 8
+    },
+    text: {
+        marginBottom: 5,
+        fontSize: 20,
+        fontWeight: "bold",
+    }
+}
+
 const RegisterForm = () => {
     const [login, setLogin] = useState('')
     const [email, setEmail] = useState('')
@@ -37,30 +50,57 @@ const RegisterForm = () => {
     return(
       <>
           <Grid>
-             <Typography>
+             <Typography style={style.text}>
                  Логин
              </Typography>
-             <Input value={login} onChange={loginSend}/>
+             <Input value={login}
+                    onChange={loginSend}
+                    style={style.input}/>
           </Grid>
           <Grid>
-              <Typography>
-                  E-mail *
+              <Typography style={style.text}>
+                  E-mail
               </Typography>
-              <Input value={email} onChange={emailSend}/>
+              <Input value={email}
+                     onChange={emailSend}
+                     style={style.input}/>
           </Grid>
           <Grid>
-              <Typography>
+              <Typography style={style.text}>
                   Новый пароль
               </Typography>
-              <Input type={"password"} value={password} onChange={passwordSend}/>
+              <Input type={"password"}
+                     value={password}
+                     onChange={passwordSend}
+                     style={style.input}/>
           </Grid>
           <Grid>
-              <Typography>
+              <Typography style={style.text}>
                   Повторите пароль
               </Typography>
-              <Input type={"password"} value={password2} onChange={password2Send}/>
+              <Input type={"password"}
+                     value={password2}
+                     onChange={password2Send}
+                     style={style.input}/>
           </Grid>
-          <Button onClick={()=>print()}>fdgfgd</Button>
+          <Grid mt={5} ml={12}>
+              <Button onClick={()=>print()} sx={{
+                  background: "#69CB2D",
+                  color: "white",
+                  borderRadius: 20,
+                  fontSize: 17,
+                  fontWeight: "bold",
+                  width: 250,
+                  "&: hover":{
+                      background: "white",
+                      color: "#69CB2D",
+                      border: "1px solid #69CB2D"
+                  }
+              }}>
+                  Зарегистрироваться
+              </Button>
+
+          </Grid>
       </>
   )
 }

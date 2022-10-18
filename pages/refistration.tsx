@@ -4,7 +4,7 @@ import {useState} from "react";
 import RegisterForm from "../components/autorization/RegisterForm";
 
 
-const Authorization = () => {
+const Refistration = () => {
 
   return(
       <Container>
@@ -21,7 +21,7 @@ const Authorization = () => {
                 </Typography>
                 <Input />
             </Grid>
-              <Grid xs={5} mt={15}>
+              <Grid xs={5} mt={10}>
                   <Container maxWidth={"xl"}>
                    <RegisterForm/>
                   </Container>
@@ -32,4 +32,4 @@ const Authorization = () => {
 }
 
 
-export default Authorization
+export default Refistration
