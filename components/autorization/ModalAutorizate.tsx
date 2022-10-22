@@ -1,28 +1,26 @@
 import {
-    Avatar,
     Box,
     Button,
-    FormControl,
     Grid,
     Input,
-    InputLabel,
     Modal,
-    Select,
-    TextField,
     Typography
 } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
 import {useState} from "react";
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    borderRadius: 5,
-    bgcolor: '#1E2235',
-    p: '24px',
+const styles = {
+    box: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        borderRadius: 5,
+        bgcolor: '#1E2235',
+        padding: '10px',
+    },
+    text: {
+    }
 };
 
 
@@ -62,38 +60,45 @@ const ModalAutorizate = ({active, setActive}) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box style={style}>
+            <Box style={styles.box}>
                 <Box mb={3} sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
+                    background: "#69CB2D",
+                    color: "white",
+                    borderRadius: 10
                 }}>
-                    <Grid>
-                        <Typography style={style.text}>
-                            E-mail
-                        </Typography>
-                        <Input value={email}
-                               onChange={emailSend}
-                               style={style.input}/>
+                    <Grid container pt={5}>
+                        <Grid xs={12} ml={10}>
+                            <Typography style={styles.text}>
+                                E-mail
+                            </Typography>
+                            <Input value={email}
+                                   onChange={emailSend}
+                                   style={styles.input} sx={{
+                                       color: "white",
+                                    border: "none"
+                            }}/>
+                        </Grid>
+                        <Grid xs={12} ml={10}>
+                            <Typography style={styles.text}>
+                                Пароль
+                            </Typography>
+                            <Input type={"password"}
+                                   value={password}
+                                   onChange={passwordSend}
+                                   style={styles.input}/>
+                        </Grid>
+                        <Grid mt={2} ml={23} pb={3}>
+                            <Button onClick={()=>setActive(false)} sx={{
+                                backgroundColor: '#424867',
+                                color: '#FFFFFF',
+                                textTransform: 'capitalize',
+                                padding: '12px 15px',
+                                borderRadius: '12px'
+                            }}>
+                                Отменить
+                            </Button>
+                        </Grid>
                     </Grid>
-                    <Grid>
-                        <Typography style={style.text}>
-                            Новый пароль
-                        </Typography>
-                        <Input type={"password"}
-                               value={password}
-                               onChange={passwordSend}
-                               style={style.input}/>
-                    </Grid>
-                    <Button onClick={()=>setActive(false)} sx={{
-                        backgroundColor: '#424867',
-                        color: '#FFFFFF',
-                        textTransform: 'capitalize',
-                        padding: '12px 15px',
-                        borderRadius: '12px'
-                    }}>
-                        Отменить
-                    </Button>
                 </Box>
             </Box>
         </Modal>

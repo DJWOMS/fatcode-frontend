@@ -52,7 +52,7 @@ const AutorizationUser = () => {
             </Grid>
             <Grid>
                 <Typography style={style.text}>
-                    Новый пароль
+                    Пароль
                 </Typography>
                 <Input type={"password"}
                        value={password}
